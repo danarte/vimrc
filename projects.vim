@@ -8,7 +8,7 @@ function! ProjectOpen(arg)
 
 		if project_name == arg
 			exe 'cd '.project_path.'/git/'
-			NERDTreeCWD
+			silent! NERDTreeCWD
 			python import vim; activate_this = '%s/bin/activate_this.py' % vim.eval('project_path')
 			for lib in project_python_libs
 				python import sys,vim; sys.path.append(vim.eval('lib'))
