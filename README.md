@@ -32,7 +32,7 @@ And that's all...
 Screenshot
 ----------
 
-![screenshot](https://raw.github.com/zenzire/vim/master/screenshot.png)
+![screenshot](https://raw.github.com/zenzire/vimrc/master/screenshot.png)
 
 
 Features
@@ -43,4 +43,4 @@ Features
 * Tags (F8 - show/hide)
 * Find File (Ctrl+F)
 * Find Buffer (Ctrl+B) 
-
+* Python autocomplete with virtualenv support
