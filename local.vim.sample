@@ -1,0 +1,7 @@
+" Python projects list
+"
+" let g:projects = [ [ project name, virtualenv path, [ PYTHONPATHs ] ] ]
+"
+" Usage: ProjectOpen <TAB>
+"
+let g:projects = [ ["pythonproject", "$HOME/src", ["$HOME/src/webapp", "$HOME/src/webapp/apps"]] ]
