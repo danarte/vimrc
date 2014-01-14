@@ -39,5 +39,8 @@ Features
 --------
 
 * Vundle
-* NERDTree 
+* NERDTree (F7 - show/hide)
+* Tags (F8 - show/hide)
+* Find File (Ctrl+F)
+* Find Buffer (Ctrl+B) 
 
