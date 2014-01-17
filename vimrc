@@ -57,12 +57,13 @@ let g:syntastic_python_checkers=['flake8']
 
 " ############################################################################
 Bundle 'Lokaltog/vim-powerline'
-
 Bundle "JarrodCTaylor/vim-python-test-runner"
-
-
 Bundle 'ervandew/supertab'
 
+" ############################################################################
+Bundle 'junegunn/goyo.vim'
+
+" ############################################################################
 " General configs
 set nowrap
 set tabstop=4
@@ -86,6 +87,7 @@ nmap <silent> ,/ :nohlsearch<CR>
 set pastetoggle=<F2>
 nmap <silent> <F8> :TagbarToggle<CR>
 nmap <silent> <C-q> :qa<CR>
+nmap <silent> <C-m> :Goyo<CR>
 nmap <silent> <C-s> :w<CR>
 inoremap <C-s> <c-o>:w<CR>
 inoremap <c-w> <c-g>u<c-w>

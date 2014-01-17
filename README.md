@@ -32,15 +32,32 @@ And that's all...
 Screenshot
 ----------
 
-![screenshot](https://raw.github.com/zenzire/vimrc/master/screenshot.png)
+Fuzzy find file (CTRL+F)
 
+![Fuzzy find file](https://raw.github.com/zenzire/vimrc/master/screenshot_findfile.png)
+
+Goyo mode (CTRL+M)
+
+![Goyo Mode](https://raw.github.com/zenzire/vimrc/master/screenshot_goyomode.png)
+
+Python autocomplete (CTRL+space)
+
+![Python autocomplete](https://raw.github.com/zenzire/vimrc/master/screenshot_python.png)
 
 Features
 --------
 
 * Vundle
-* NERDTree (F7 - show/hide)
-* Tags (F8 - show/hide)
-* Find File (Ctrl+F)
-* Find Buffer (Ctrl+B) 
+* NERDTree (F7)
+* Tags (F8)
+* Find file (CTRL+F)
+* Find buffer (CTRL+B) 
+* Goyo mode (CTRL+M)
 * Python autocomplete with virtualenv support
+
+
+Changes
+-------
+
+* 2014-Jan-17 - Added Goyo Mode
+* 2014-Jan-14 - Initial version
