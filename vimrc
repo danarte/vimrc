@@ -63,6 +63,8 @@ Bundle 'ervandew/supertab'
 " ############################################################################
 Bundle 'junegunn/goyo.vim'
 
+Bundle 'rking/ag.vim'
+
 " ############################################################################
 " General configs
 set nowrap
