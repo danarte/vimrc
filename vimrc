@@ -44,7 +44,7 @@ nmap <silent> <A-PageUp> :bp<CR>
 
 " ############################################################################
 Bundle "flazz/vim-colorschemes"
-
+ 
 
 " ############################################################################
 Bundle 'davidhalter/jedi-vim'
@@ -64,6 +64,8 @@ Bundle 'ervandew/supertab'
 Bundle 'junegunn/goyo.vim'
 
 Bundle 'rking/ag.vim'
+
+Bundle 'Blackrush/vim-gocode'
 
 " ############################################################################
 " General configs
@@ -94,13 +96,15 @@ nmap <silent> <C-s> :w<CR>
 inoremap <C-s> <c-o>:w<CR>
 inoremap <c-w> <c-g>u<c-w>
 command! Vimrc e $HOME/.vim/vimrc
-command! Ctags !ctags -R .. --total -f .tags
+command! Ctags !ctags -R .. -f .tags
 set tags=.tags
 
 " Color scheme
 set t_Co=256
-colorscheme mustang
 syntax on
+set background=light
+colorscheme Tomorrow
+highlight Normal ctermbg=white
 
 filetype indent on
 filetype on
