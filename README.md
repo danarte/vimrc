@@ -12,7 +12,7 @@ The first of all make sure you have installed Vim version 7.4 or higher.
 Fetch the Vim source files from GitHub repository:
 
 ``
-$ git clone git://github.com/zenzire/vim.git ~/.vim
+$ git clone git://github.com/zenzire/vimrc.git ~/.vim
 ``
 
 Install [Vundle](https://github.com/gmarik/vundle) (Vim package manager):
