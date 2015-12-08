@@ -12,12 +12,13 @@ Bundle 'airblade/vim-rooter'
 
 " ############################################################################
 Bundle 'scrooloose/nerdtree'
-Bundle 'jistr/vim-nerdtree-tabs'
+" Bundle 'jistr/vim-nerdtree-tabs'
 let NERDTreeIgnore = ['\.pyc$']
-let g:ctrlp_prompt_mappings = {
-    \ 'AcceptSelection("e")': ['<c-t>'],
-    \ 'AcceptSelection("t")': ['<cr>', '<2-LeftMouse>'],
-    \ }
+let g:NERDTreeWinSize = 40 
+" let g:ctrlp_prompt_mappings = {
+"     \ 'AcceptSelection("e")': ['<c-t>'],
+"     \ 'AcceptSelection("t")': ['<cr>', '<2-LeftMouse>'],
+"     \ }
 
 " ############################################################################
 Bundle 'kien/ctrlp.vim'
@@ -25,7 +26,7 @@ Bundle 'kien/ctrlp.vim'
 set wildignore+=*.pyc
 set wildignore+=*.jpg
 "let g:ctrlp_extensions = ['tag' ]
-nmap <C-b> :CtrlPBuffer<CR>
+nmap <C-e> :CtrlPBuffer<CR>
 let g:ctrlp_map = '<c-f>'
 let g:ctrlp_cmd = 'CtrlP'
 let mapleader=","
@@ -54,8 +55,13 @@ let g:syntastic_check_on_wq = 0
 
 " ############################################################################
 Bundle 'ervandew/supertab'
-Bundle 'mkitt/tabline.vim'
-
+" Bundle 'mkitt/tabline.vim'
+" Bundle 'ap/vim-buftabline'
+Bundle 'bling/vim-airline'
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#fnamemod = ':t'
+let g:airline#extensions#tabline#left_sep = ''
+let g:airline_powerline_fonts = 1
 
 " ############################################################################
 Bundle 'rking/ag.vim'
@@ -80,6 +86,8 @@ set hlsearch
 set incsearch
 set nobackup
 set noswapfile
+set expandtab
+set hidden
 nnoremap ; :
 nmap <silent> ,/ :nohlsearch<CR>
 "set mouse=a
@@ -106,21 +114,21 @@ set go-=L
 set go-=r
 set guifont=Hack\ 11
 
-noremap <Leader>1  :tabn 1<CR> 
-noremap <Leader>2  :tabn 2<CR> 
-noremap <Leader>3  :tabn 3<CR> 
-noremap <Leader>4  :tabn 4<CR> 
-noremap <Leader>5  :tabn 5<CR> 
-noremap <Leader>6  :tabn 6<CR> 
-noremap <Leader>w  :tabclose<CR> 
-noremap <Leader>PageDown  :bprevious<CR> 
-noremap <Leader>PageUp :bnext<CR> 
+noremap <Leader>1  :b1<CR> 
+noremap <Leader>2  :b2<CR> 
+noremap <Leader>3  :b3<CR> 
+noremap <Leader>4  :b4<CR> 
+noremap <Leader>5  :b5<CR> 
+noremap <Leader>6  :b6<CR> 
+noremap <Leader>w  :bdelete<CR> 
+noremap <Leader>,  :bprevious<CR> 
+noremap <Leader>.  :bnext<CR> 
 
 nnoremap <silent> <Tab> :wincmd w<CR>
 nnoremap <silent> <S-Tab> :wincmd W<CR>
 
-nmap <leader>d :NERDTreeTabsToggle<CR>
-nmap <leader>s :NERDTreeTabsFind<CR>
+noremap <leader>d :NERDTreeToggle<CR>
+noremap <leader>s :NERDTreeFind<CR>
 
 let NERDChristmasTree = 1
 let NERDTreeMinimalUI = 1
@@ -142,6 +150,8 @@ set listchars=tab:▸\ ,eol:¬,trail:.,extends:#,nbsp:.
 
 nmap <silent> <leader>ev :e $MYVIMRC<CR>
 nmap <silent> <leader>sv :so $MYVIMRC<CR>
+nnoremap <silent> > :5wincmd ><CR>
+nnoremap <silent> < :5wincmd <<CR>
 
 execute "silent! source $HOME/.vim/vim.local"
 execute "silent! source .vim.local"
