@@ -1,4 +1,5 @@
 set nocompatible
+
 filetype off
 
 set rtp+=~/.vim/bundle/vundle/
@@ -7,14 +8,16 @@ call vundle#rc()
 " let Vundle manage Vundle
 Bundle 'gmarik/vundle'
 Bundle 'tpope/vim-fugitive'
+Bundle 'airblade/vim-rooter'
 
 " ############################################################################
 Bundle 'scrooloose/nerdtree'
 Bundle 'jistr/vim-nerdtree-tabs'
-
-autocmd VimEnter * if !argc() | NERDTree | endif
 let NERDTreeIgnore = ['\.pyc$']
-nmap <F7> :NERDTreeToggle<CR>
+let g:ctrlp_prompt_mappings = {
+    \ 'AcceptSelection("e")': ['<c-t>'],
+    \ 'AcceptSelection("t")': ['<cr>', '<2-LeftMouse>'],
+    \ }
 
 " ############################################################################
 Bundle 'kien/ctrlp.vim'
@@ -25,6 +28,8 @@ set wildignore+=*.jpg
 nmap <C-b> :CtrlPBuffer<CR>
 let g:ctrlp_map = '<c-f>'
 let g:ctrlp_cmd = 'CtrlP'
+let mapleader=","
+
 
 " ############################################################################
 Bundle 'fisadev/vim-ctrlp-cmdpalette'
@@ -32,19 +37,25 @@ nmap <S-C-p> :CtrlPCmdPalette<CR>
 
 " ############################################################################
 Bundle "flazz/vim-colorschemes"
- 
+
 " ############################################################################
 Bundle 'davidhalter/jedi-vim'
-let g:jedi#use_tabs_not_buffers = 0
-let g:jedi#goto_definitions_command = "<C-]>"
 
 " ############################################################################
 Bundle 'scrooloose/syntastic'
-let g:syntastic_python_checkers=['flake8']
+let g:syntastic_python_checkers=['flake8', 'python']
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
 
 " ############################################################################
 Bundle 'ervandew/supertab'
-Bundle 'humiaozuzu/TabBar'
+Bundle 'mkitt/tabline.vim'
+
 
 " ############################################################################
 Bundle 'rking/ag.vim'
@@ -73,7 +84,6 @@ nnoremap ; :
 nmap <silent> ,/ :nohlsearch<CR>
 "set mouse=a
 set pastetoggle=<F2>
-nmap <silent> <F8> :TagbarToggle<CR>
 nmap <silent> <C-q> :qa<CR>
 nmap <silent> <C-s> :w<CR>
 inoremap <C-s> <c-o>:w<CR>
@@ -81,13 +91,6 @@ inoremap <c-w> <c-g>u<c-w>
 command! Vimrc e $HOME/.vim/vimrc
 command! Ctags !ctags -R .. -f .tags
 set tags=.tags
-
-" Color scheme
-set t_Co=256
-syntax on
-set background=light
-colorscheme Tomorrow
-highlight Normal ctermbg=white
 
 filetype indent on
 filetype on
@@ -101,39 +104,44 @@ set wildchar=<Tab> wildmenu wildmode=full
 set go-=T
 set go-=L
 set go-=r
-set guifont=Droid\ Sans\ Mono\ 10 
+set guifont=Hack\ 11
 
-if has("gui_running")
-    set lines=50 columns=200
-    set guitablabel=%N/\ %t\ %M
-    map  <silent> <C-Tab>      :tabnext<CR>
-    imap <silent> <C-Tab>      <C-O>:tabnext<CR>
-    map  <silent> <C-S-Tab>    :tabprev<CR>
-    imap <silent> <C-S-Tab>    <C-O>:tabprev<CR>
-    nmap <silent> <C-PageDown> :tabnext<CR>
-    nmap <silent> <C-PageUp>   :tabprevious<CR>
-    nmap <silent> <C-c>        :tabclose<CR>
-    map <silent> <M-1> :tabn 1<CR>
-    map <silent> <M-2> :tabn 2<CR>
-    map <silent> <M-3> :tabn 3<CR>
-    map <silent> <M-4> :tabn 4<CR>
-    map <silent> <M-5> :tabn 5<CR>
-    map <silent> <M-6> :tabn 6<CR>
-    map <silent> <M-7> :tabn 7<CR>
-    map <silent> <M-8> :tabn 8<CR>
-    map <silent> <M-9> :tabn 9<CR>
-    map <silent> <M-0> :tabn 10<CR>
-else
-    map  <silent> <C-Tab>      :Tbbn<CR>
-    imap <silent> <C-Tab>      <C-O>:Tbbn<CR>
-    map  <silent> <C-S-Tab>    :Tbbp<CR>
-    imap <silent> <C-S-Tab>    <C-O>:Tbbp<CR>
-    nmap <silent> <C-PageDown> :Tbbn<CR>
-    nmap <silent> <C-PageUp>   :Tbbp<CR>
-    nmap <silent> <C-c>        :Tbbd<CR>
-endif
+noremap <Leader>1  :tabn 1<CR> 
+noremap <Leader>2  :tabn 2<CR> 
+noremap <Leader>3  :tabn 3<CR> 
+noremap <Leader>4  :tabn 4<CR> 
+noremap <Leader>5  :tabn 5<CR> 
+noremap <Leader>6  :tabn 6<CR> 
+noremap <Leader>w  :tabclose<CR> 
+noremap <Leader>PageDown  :bprevious<CR> 
+noremap <Leader>PageUp :bnext<CR> 
 
-Bundle 'airblade/vim-rooter'
+nnoremap <silent> <Tab> :wincmd w<CR>
+nnoremap <silent> <S-Tab> :wincmd W<CR>
 
-execute "silent! source $HOME/.vim/local.vim"
-execute "silent! source .local.vim"
+nmap <leader>d :NERDTreeTabsToggle<CR>
+nmap <leader>s :NERDTreeTabsFind<CR>
+
+let NERDChristmasTree = 1
+let NERDTreeMinimalUI = 1
+
+let g:NERDTreeDirArrowExpandable = '▸'
+let g:NERDTreeDirArrowCollapsible = '▾'
+
+" Color scheme
+set t_Co=256
+syntax on
+colorscheme Tomorrow
+"set background=light
+" highlight! Normal ctermbg=white
+" highlight! VertSplit ctermbg=white ctermfg=darkgray
+
+" invisible charts
+set list
+set listchars=tab:▸\ ,eol:¬,trail:.,extends:#,nbsp:.
+
+nmap <silent> <leader>ev :e $MYVIMRC<CR>
+nmap <silent> <leader>sv :so $MYVIMRC<CR>
+
+execute "silent! source $HOME/.vim/vim.local"
+execute "silent! source .vim.local"
