@@ -12,13 +12,8 @@ Bundle 'airblade/vim-rooter'
 
 " ############################################################################
 Bundle 'scrooloose/nerdtree'
-" Bundle 'jistr/vim-nerdtree-tabs'
 let NERDTreeIgnore = ['\.pyc$']
 let g:NERDTreeWinSize = 40 
-" let g:ctrlp_prompt_mappings = {
-"     \ 'AcceptSelection("e")': ['<c-t>'],
-"     \ 'AcceptSelection("t")': ['<cr>', '<2-LeftMouse>'],
-"     \ }
 
 " ############################################################################
 Bundle 'kien/ctrlp.vim'
@@ -55,8 +50,6 @@ let g:syntastic_check_on_wq = 0
 
 " ############################################################################
 Bundle 'ervandew/supertab'
-" Bundle 'mkitt/tabline.vim'
-" Bundle 'ap/vim-buftabline'
 Bundle 'bling/vim-airline'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#fnamemod = ':t'
@@ -65,7 +58,7 @@ let g:airline_powerline_fonts = 1
 
 " ############################################################################
 Bundle 'rking/ag.vim'
-
+Bundle 'Chiel92/vim-autoformat'
 Bundle 'Blackrush/vim-gocode'
 
 " ############################################################################
@@ -152,6 +145,7 @@ nmap <silent> <leader>ev :e $MYVIMRC<CR>
 nmap <silent> <leader>sv :so $MYVIMRC<CR>
 nnoremap <silent> > :5wincmd ><CR>
 nnoremap <silent> < :5wincmd <<CR>
+noremap <leader>f :Autoformat<CR>
 
 execute "silent! source $HOME/.vim/vim.local"
 execute "silent! source .vim.local"
