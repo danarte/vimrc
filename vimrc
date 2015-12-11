@@ -70,6 +70,10 @@ Plugin 'Chiel92/vim-autoformat'
 " Go lang support
 Plugin 'Blackrush/vim-gocode'
 
+
+" Close buffers
+Plugin 'moll/vim-bbye'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            
 filetype plugin indent on    
@@ -116,7 +120,7 @@ noremap <Leader>3  :b3<CR>
 noremap <Leader>4  :b4<CR> 
 noremap <Leader>5  :b5<CR> 
 noremap <Leader>6  :b6<CR> 
-noremap <Leader>w  :bdelete<CR> 
+noremap <Leader>w  :Bdelete<CR> 
 noremap <Leader>,  :bprevious<CR> 
 noremap <Leader>.  :bnext<CR> 
 nnoremap <silent> <Tab> :wincmd w<CR>
