@@ -1,8 +1,1 @@
-autoload
 bundle
-colors
-doc
-plugins
-local.vim
-ftdetect
-syntax

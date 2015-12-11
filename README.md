@@ -15,16 +15,16 @@ Fetch the Vim source files from GitHub repository:
 $ git clone git://github.com/zenzire/vimrc.git ~/.vim
 ``
 
-Install [Vundle](https://github.com/gmarik/vundle) (Vim package manager):
+Install [Vundle](https://github.com/VundleVim/Vundle.vim) (plug-in manager for Vim):
 
 ``
-$ git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+$ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 ``
 
-Run vim and type the following command (to fetch all plugins):
+Download and install all plugins:
 
 ``
-:BundleInstall
+$ vim +PluginInstall +qall
 ``
 
 And that's all... 
