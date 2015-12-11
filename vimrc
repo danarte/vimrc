@@ -70,9 +70,11 @@ Plugin 'Chiel92/vim-autoformat'
 " Go lang support
 Plugin 'Blackrush/vim-gocode'
 
-
 " Close buffers
 Plugin 'moll/vim-bbye'
+
+Plugin 'majutsushi/tagbar'
+let g:tagbar_width = 40
 
 " All of your Plugins must be added before the following line
 call vundle#end()            
@@ -127,6 +129,7 @@ nnoremap <silent> <Tab> :wincmd w<CR>
 nnoremap <silent> <S-Tab> :wincmd W<CR>
 noremap <leader>d :NERDTreeToggle<CR>
 noremap <leader>s :NERDTreeFind<CR>
+noremap <leader>t :TagbarToggle<CR>
 
 " invisible charts
 set list
