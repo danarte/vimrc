@@ -14,6 +14,10 @@ Plugin 'tpope/vim-fugitive'
 
 " A tree explorer
 Plugin 'scrooloose/nerdtree'
+
+" Open NERDTree when there is no files
+autocmd VimEnter * if !argc() | NERDTree | endif
+
 let NERDTreeIgnore = ['\.pyc$']
 let g:NERDTreeWinSize = 40 
 let NERDChristmasTree = 1
@@ -87,7 +91,7 @@ set tabstop=4
 set backspace=indent,eol,start
 set autoindent
 set copyindent
-set nonumber
+set number
 set shiftwidth=4
 set shiftround
 set showmatch
