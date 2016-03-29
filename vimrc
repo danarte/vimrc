@@ -133,7 +133,7 @@ noremap <Leader>,  :bprevious<CR>
 noremap <Leader>.  :bnext<CR> 
 nnoremap <silent> <Tab> :wincmd w<CR>
 nnoremap <silent> <S-Tab> :wincmd W<CR>
-noremap <leader>d :NERDTreeToggle<CR>
+noremap <leader>n :NERDTreeToggle<CR>
 noremap <leader>s :NERDTreeFind<CR>
 noremap <leader>t :TagbarToggle<CR>
 
