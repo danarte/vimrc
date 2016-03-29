@@ -48,14 +48,14 @@ Python syntax checking
 Shortcuts
 ---------
 
-* switching between buffers - <leader>1 ... 6
-* close buffer - <leader>w
-* next buffer - <leader>,
-* previous buffer - <leader>.
+* switching between buffers - ,1 ... 6
+* close buffer - ,w
+* next buffer - ,,
+* previous buffer - ,.
 * switching between windows - Tab
-* open/close NERDTree - <leader>n 
-* find current file in NERDTree - <leader>s
-* open tags - <leader>t
+* open/close NERDTree - ,n 
+* find current file in NERDTree - ,s
+* open tags - ,t
 * Fuzy find file - CTRL+F
 * Find find buffer - CTRL+B
 
