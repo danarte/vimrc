@@ -110,10 +110,13 @@ nnoremap ; :
 nmap <silent> ,/ :nohlsearch<CR>
 set mouse=a
 set pastetoggle=<F2>
-nmap <silent> <C-q> :qa<CR>
-nmap <silent> <C-s> :w<CR>
-inoremap <C-s> <c-o>:w<CR>
-inoremap <c-w> <c-g>u<c-w>
+imap <C-q> <c-o>:qa<CR>
+nmap <C-q> :qa<CR>
+imap <C-s> <c-o>:w<CR>
+nmap <C-s> :w<CR>
+imap <c-w> <c-o>:Bdelete<CR>
+nmap <c-w> :Bdelete<CR>
+
 set t_Co=256
 set background=light
 colorscheme Tomorrow
@@ -143,9 +146,9 @@ set listchars=tab:▸\ ,eol:¬,trail:.,extends:#,nbsp:.
 
 nmap <silent> <leader>ev :e $MYVIMRC<CR>
 nmap <silent> <leader>sv :so $MYVIMRC<CR>
-nnoremap <silent> > :5wincmd ><CR>
-nnoremap <silent> < :5wincmd <<CR>
-noremap <leader>f :Autoformat<CR>
+nmap <silent> > :5wincmd ><CR>
+nmap <silent> < :5wincmd <<CR>
+nmap <leader>f :Autoformat<CR>
 
 execute "silent! source $HOME/.vim/vim.local"
 execute "silent! source .vim.local"
